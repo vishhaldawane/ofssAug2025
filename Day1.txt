@@ -1,0 +1,194 @@
+
+
+	3D x y z
+				who
+				|? role
+		-------------------------------
+		|			|
+		where			when
+		| space			| time <-
+	-----------------------------------------
+	|			|		|
+	why			what		how
+	|			|		|
+	reason		   inFORMation		implementation
+
+
+	knowledge	-> apply ->	wisdom
+
+
+	word water is not water
+
+	
+EJB - enterprise java beans [ component / class ]
+
+@WebSecurity
+class SavignsAccount
+{
+	acno+name+balance
+	
+	@Transactional
+	withdraw() 
+	{ }
+	
+	+ deposit()
+}
+class Room
+{
+}
+class Customer
+{
+}
+
+
+		Big Picture - The Bird Eye View
+
+ mind =  
+
+			Java Technology
+				|
+		---------------------------------
+		|		|		|
+		JSE		JEE		JME
+	     core java		|enterprise	|micro
+	 lang fundas	--------------------	
+ oops concepts		|		|
+ association		Web		EJB
+ isA, hasA, usesA	|		|
+ producesA  		Servletsv   ---------------------	
+ exception handling	JSP	    | 	     |	DB      |	
+ packages		Angular	   Stateless Stateful Message	
+ threading		React	    				    	
+ generics		OJET
+ collections		JS-ajax
+ file handling		
+ jdbc
+ |
+ Adv Java
+ Networking
+ RMI/RPC
+	
+	machine1		---->		machine2
+	ATM SErver				ATM client
+						<- human [ cc/dc ]
+
+	t1			   t2		  
+developers	testers		deployers	  users
+				
+
+
+
+"Enterprise application" <-- server [ software ]
+
+
+Enterprise application features
+-----------------------------------
+
+1. Networking
+	Remote capability
+	Socket s = new Socket();
+
+2. Highly Available - 24 x 7 - cluster
+	count heartbeats from the server
+
+3. Multithreading
+	Thread t = new Thread();
+
+4. pooling of resources
+	Connection manager code
+
+5. caching of resources
+	Connection manager code
+
+6. transaction management - ACID
+	Transaction 
+
+7. security management
+		256 bit parity - TLS - https - grid banking
+	WebSecurity
+
+
+
+
+
+
+
+
+
+
+
+DEPT
+	10		20		30	40
+	ACCOUNTS	RESEARCH	SALES	OPERAITONS
+	
+
+EMP
+			KING
+			|10
+			|7839 - PRESIDENT
+			|
+	-----------------------------------------------------------------
+	|30				|10			|20
+	BLAKE				CLARK			JONES
+	MANAGER				MANAGER			MANAGER
+	7698				7784			7566
+	SALES				ACCOUNTS		RESEARCH	
+	|				|			|2975
+---------------------------------	|		----------------
+|	|	|	|	|	|		|		|
+MARTIN	ALLEN	TURNER WARD	JAMES	MILLER		SCOTT		FORD
+<----SALESMAN-------------->    CLERK	CLERK		ANALYST		ANALYST
+7654    7499	7844	7521	950	1300		3000		3000
+|	|	|	|				|		|
+1	2	3	3				ADAMS		SMITH
+102	104	100	101				CLERK		CLERK
+	107	105	103				1100		800
+		108	106
+
+
+		800 CRORES
+
+		E   |	B	
+		---------
+		S   |	I
+		98%	2%
+		2%	98%
+
+
+DEPT
+  |
+ EMP <-----> ADHAAR
+  |
+ CUSTOMER
+	|
+	ORD
+	|
+	ITEM
+	  |
+	  PRODUCT
+		|
+		PRICE
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
