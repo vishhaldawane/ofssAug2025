@@ -173,11 +173,424 @@ DEPT
 
 
 
+SQL statements
 
+	DQL - Data Query language
 
+	DDL - create, truncate, alter, rename, drop
 
+	DML - insert update and delete
+
+	DCL - grant and revoke
+
+	TCL - commit and rollback 
+
+constraints
+set operators
+Joins
+Group formation
+project allocation
+Project case study to implement - table normalization process
+ 
+
+	XX		XY
+	female		male
+	|		|
+	-----------------
+		
+
+		data types
+
+	int i;    C/C++/Java
+	
+	x number; oracle db
+	x number; angular
+
+	boy prema
 
 	
+	create table student
+	(
+		rollnumber number,
+		student_name varchar2(20),
+		email varchar2(20),
+		stream varchar2(20),
+		birthdate date,
+		address varchar2(20)
+	)
+
+
+	CONTSTRAINTS
+	-------------	
+		Certain business rules imposed upon columns
+
+
+
+	1. Integrity constraint
+		primary key
+		unique + not null
+
+	2. Domain constraint
+		not null
+
+	3. Value constaint
+		check
+		sal > 5000
+		phy > 0 - 100 
+
+	4. default value constraint
+		default as Y or N 
+		F or M
+
+	5. referential integrity constraint
+		foreign key
+
+	6. unique constraint
+		it may have null but no duplicates
+
+	7. unique + not null - alternative primary key
+	
+	
+
+ 			two wasy to apply the constraints
+			|
+		---------------------------
+		|			|
+	along with column defn		after all the table defn
+	|				|
+	column level constraint		table level constraint
+
+
+
+	create table emp2
+	(
+		empno number PRIMARY KEY,
+		gender char(1) default 'F',
+		ename varchar2(20) NOT NULL,
+		email varchar2(20) unique,
+		sal number CHECK (SAL>5000),
+		comm number CHECK (COMM>300)
+	);
+
+
+
+COLUMN LEVEL CONSTRAINTS
+
+create table emp3
+        (       
+                empno number CONSTRAINT EMPNO_PK PRIMARY KEY,
+                gender char(1) default 'F',
+                ename varchar2(20) CONSTRAINT ENAME_NOTNULL NOT NULL,
+                email varchar2(20) CONSTRAINT EMAIL_UNQ unique,
+                sal number CONSTRAINT CHECK_SAL_GT_5K CHECK (SAL>5000),
+                comm number CONSTRAINT CHECK_COMM_GT_SAL CHECK (COMM>300)
+        );
+
+
+TABLE LEVEL CONSTRAINTS
+
+	create table emp4
+	(
+		empno number, 
+		gender char(1) default 'F', 
+		ename varchar2(20), 
+		email varchar2(20), 
+		sal number, 
+		comm number,
+		constraint emp_pk2 primary key (empno),
+		constraint ename_notNull not null (ename),
+		constraint email_unique unique (email),
+		constraint check_salary check (sal>6000),
+		constraint check_comm check (comm > 700)
+	);
+
+
+SET OPERATORS
+
+	1. UNION
+
+	2. UNION ALL
+	
+	3. MINUS
+
+	4. INTERSECT
+
+
+
+
+
+
+
+
+
+JOIN
+-----
+	COMBINING THE OUTPUT OF MULTIPLE TABLES
+
+	
+1. NATURAL JOIN - CROSS JOIN - CARTESION PRODUCT
+
+	
+2. EQUI JOIN
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Core Java
+-----------
+
+	Language Fundamentals
+	|
+	spoken language
+	|		
+	---------------------------
+	|	|	|	|	
+	listen	speak  read	write
+	|	|
+	ears	tongue
+		|
+		taste
+
+Features of Java Programming Language
+	
+1. WORA
+	write once 
+	and run anywhere 
+
+2. easy
+	legacy of C/C++ syntax
+	no pointers
+
+3. Object Oriented
+	OOPS = Association
+	
+4. Robust
+	no memory mangement
+	automatic garbage collection
+
+5. Secured
+	SandBox 
+
+6. Multithreaded
+
+7. Distributed
+	network based coding
+	JVM	<---> JVM
+
+ 
+	calc.cpp
+	|
+	compiled
+	|
+	calc.obj
+	|
+	linking
+	|
+	calc.exe
+
+
+	First.java
+	|
+	compile
+	|
+	.class file [ what would be the name of this file ? ]
+	  [ you may not get First.class ]
+	
+	the name of the .class file is as per the classes
+	declared in the First.java file
+
+
+First.java
+-----------
+class First
+{
+}
+------- compiled -----
+First.class
+
+=================
+First.java
+----------
+class Joker
+{
+	public static void main(String args[])
+	{
+	}
+}
+
+class RingMaster
+{
+	public static void main(String args[])
+	{
+	}
+}
+--------
+javac First.java
+	   |
+---------compiled -----
+Joker.class
+RingMaster.class
+	|
+	how to run them
+	|
+java Joker
+java RingMaster
+
+
+
+
+
+
+
+
+
+Vishal
+---------
+class MyWallet
+{
+	
+}
+
+class MovieTicket
+{
+}
+
+class SedanCar
+{
+}
+class IceCream
+{
+}
+class Cinema
+{
+}
+
+ -- association -- how to apply
+	isA, hasA, usesA,producesA
+
+
+
+Mahesh Thakare
+----------------
+class Rose
+{
+}
+class Flower { }
+class FlowerPot { }
+class Water  { }
+class Fragrance  { }
+
+
+Muskan Tolani
+----------------
+class Laptop
+{
+}
+class PenDrive
+{
+}
+class Paper
+{
+}
+class Pen
+{
+}
+class Notes
+{
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Association
+	------------
+		relation of classes with each other
+
+	class Heart { 
+		void pumpingBlood() { 
+		}
+	}
+	class Mammal { 
+		void giveBirth() { }
+	}
+	class Brain { } 
+	class Lung { }
+
+	class Human extends Mammal { //isA
+
+		//mandatory for a human to survive
+		Heart myHeart = new Heart(); //hasA
+		Brain myBrain = new Brain(); //hasA
+		Lung leftLung = new Lung(); //hasA
+		Lung rightLung = new Lung(); //hasA
+	}
+
+	class Machine //every machine is not a washing machine
+	{
+	}
+	class WashingMachine extends Machine // isA
+	{		//every washing machine is a machine
+		
+		//hasA
+		WashingTub washTub = new WashingTub(); //instance
+
+	}
+
+	class Tub { } //every tub is not a washing tub
+	class WashingTub extends Tub // every Washing tub is a Tub 
+	{
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
