@@ -76,7 +76,10 @@ class ElectronicGuitar extends Guitar //non-abstract
  			-------------------------			---------------------------
  			|			|			|			|			|			|
  			SBMI		ABMI		DBMI		?			?			?
- 
+ 			|			|			|	
+ 			Guitar		?			?
+ 			Sitar		?			?
+ 			Violin		?			?
  */
 
 
