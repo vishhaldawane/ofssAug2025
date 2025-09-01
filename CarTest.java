@@ -1,11 +1,23 @@
 
 public class CarTest {
-	public static void main(String[] args) {
+	public static void main(String[] args) //throws CarKeyNotFoundException
+	{
 		
 		System.out.println("Begin main");
 		
-		Car car = new Car();
-		car.startTheCar();
+		//Unhandled exception type CarKeyNotFoundException
+		Car car;
+		try {
+			car = new Car();
+			car.startTheCar();
+			
+		} catch (CarKeyNotFoundException e) {
+			
+			System.out.println("Car Problem :  "+e.getMessage());
+		}
+		finally {
+			System.out.println("Journey is over....");
+		}
 		
 		System.out.println("End main");
 			
@@ -16,13 +28,16 @@ class Car
 {
 	boolean carKeyFound = false;
 	
-	Car() {
+	Car() throws CarKeyNotFoundException 
+	{
 		double val = Math.random()%10;
 		System.out.println(val);
 		if(val > 0.50) {
 			carKeyFound = true;
 		} else {
 			carKeyFound=false;
+			//Unhandled exception type CarKeyNotFoundException
+			throw new CarKeyNotFoundException("Car key is missing...");
 		}
 	}
 	
@@ -61,16 +76,23 @@ class Car
 	}
 }
 
-class SpeedLimitException extends RuntimeException
+class SpeedLimitException extends RuntimeException //unchecked
 {
 	SpeedLimitException(String str) {
 		super(str);
 	}
 }
-class SpeedBreakerException extends RuntimeException
+class SpeedBreakerException extends RuntimeException //unchecked
 {
 	SpeedBreakerException(String str) {
 		super(str);
+	}
+}
+
+class CarKeyNotFoundException extends Exception //checked
+{
+	CarKeyNotFoundException(String msg) {
+		super(msg);
 	}
 }
 
