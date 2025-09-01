@@ -1,66 +1,41 @@
 
 public class InterfaceTest {
 	public static void main(String[] args) {
-	
-		//higher you go to chase the super class handle
-		//lesser the scope of methods
-		
-		//lower you go to chase the sub class handle
-		//wider the scope of methods
-		
-		Bat animal = new Bat();
-		animal.eat();
-		animal.swim();
-		animal.giveBirth();
-		
+		Mammal x = new Person();
+		x.giveBirth();
+		x.think();
+		x.talk();
+		x.react();
 		
 	}
 }
 
-interface Animal {
-	void eat();
+interface Reactive {
+	void react();
 }
-interface Bird extends Animal {
-	void fly();
+interface Responsive extends Reactive {
+	void response();
 }
-interface Mammal extends Animal {
-	void giveBirth();
+interface Proactive extends Responsive {
+	void proact();
 }
-interface Fish extends Animal {
-	void swim();
+class Mammal {
+	void giveBirth() {
+		System.out.println("Mammal giving birth...");
+	}
 }
-
-class Bat implements Bird,Mammal  {
-	public void fly() { }
-	public void giveBirth() { }
-	public void eat() { }
-
+class Human extends Mammal {
+	void think() {
+		System.out.println("Human blessed with thinking...");
+	}
 }
-class Whale implements Fish,Mammal
-{
-	public void swim() { }
-	public void giveBirth() { }
-	public void eat() { }
+//The type Person must implement 
+//the inherited abstract method Reactive.react()
+class Person extends Human implements Reactive {
+	void talk() {
+		System.out.println("person is talking...");
+	}
+	public void react() {
+		System.out.println("Person is reactive...");
+	}
 }
-
-class Horse implements Mammal
-{
-	public void giveBirth() { }
-	public void eat() { }
-}
-
-
-/*
-
-					Animal
-						| eat() /sleep() / reproduce() / 
-		---------------------------------
-		|				|			   |
-		Bird		 Mammal			  Fish		
-		|fly()			|giveBirth()	|swim()			 
-	----------	    ---------		-----------
-	|		 |*		|		|		|*		 |
- Parrot		 Bat   Human	Horse   Whale   Sword   
-
-*/
-
