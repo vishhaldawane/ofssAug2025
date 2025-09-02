@@ -544,6 +544,12 @@ class Notes
 	Association
 	------------
 		relation of classes with each other
+			|
+		--------------------------
+		|	|	|	|
+		isA	hasA	usesA	producesA
+		|	|	|	|
+		structural	operational/functional
 
 	class Heart { 
 		void pumpingBlood() { 
@@ -567,19 +573,259 @@ class Notes
 	class Machine //every machine is not a washing machine
 	{
 	}
-	class WashingMachine extends Machine // isA
+	class WashingMachine extends Machine //1. isA
 	{		//every washing machine is a machine
 		
-		//hasA
+		//2. hasA - observe below line, it is not in any
+		//method or a function
 		WashingTub washTub = new WashingTub(); //instance
+		
+	   4. produesA
+		|		//3. usesA - observe them as args 
+		Laundry wash(Cloth c[], WashingPowder wp, Water w, 
+				Electricity e)
+		{
 
+		}
 	}
+	class Tub { } class WashingTub{ } class Powder { }
+	class Water{ } class WashingPowder { } class Electricity{ }
+	class Laundry { } class Cloth {}
+
+
+
+	class Photographer {
+		Camera cam1 = new Camera();
+		
+		Photo click(Scene s, LightEffects le, Face f) {
+		
+		}
+	}
+
+	class Camera { }
+	class VideoCamera extends Camera  { }
+
+	class CinematoGrapher extends Photographer {
+		VideoCamera vidCam = new VideoCamera();		
+	}
+	
+
+
+
+
+
+
 
 	class Tub { } //every tub is not a washing tub
 	class WashingTub extends Tub // every Washing tub is a Tub 
 	{
 	}
 
+	class Filament { }
+	class Bulb {
+		Filament fila = new Filament(); //hasA
+	}
+
+	class Compressor { }
+
+	class Refrigerator {
+		Compressor comp = new Compressor(); //has	
+	}
+
+
+
+
+The height of your success 170
+cannot exceed
+the height of your personal development
+			( 6 )
+		1 2 3 4 5 6
+		|
+		silence
+		as soon as u wake up
+		
+You cannot decide your future!!!
+But you can decide your habits!!!!!
+and your habits will decide your future!!!!!!!!!
+
+
+	OOPS concepts
+	---------------
+		
+		1. Abstraction
+			- it is the "what is?" part of an object
+			- it is "hiding" the complexity of an object
+			- providing simplicity of an object by its
+			  accessible (public) functions
+
+			what is an ATM? - dispense cash
+			what is your father? - he is a cashier in a bank
+			what is your job? - im java developer
+
+			i. data abstraction [ private data ]
+				total cash stored by the atm??
+				how many people accessed atm till now?
+				how many notes of Rs 500/- present in it?
+
+				how much cash dispensed by your father
+				in his job till now?
+				
+				how many lines of code written till now
+			ii. procedural abstraction [ private methods ]
+				how the cash is actually dispensed?
+				camera survelliance unknown to us
+				actual job of cashier is not known to us
+			iii. class abstraction [ private inner classes ]
+				the complete safety unit of atm is
+				unknown to us
+				- complete java technology as a unit unknown
+				to us
+
+
+
+		2. Encapsulation
+			- it is the "how is it?" part of an object
+			- coding for the complexity of an object
+			- so that the simplicity can be provided
+			- binding of data with concerned functions
+
+			class ATM
+			{
+				private int totalUsersHit;
+				private double totalCashPresentToday;
+				private double totalCashDispsedToday;
+				private void cameraOn() { }
+				private class Permissions { data + funs}
+				
+				public void withdraw(double amt) {
+				
+				}
+				public void changePin() { }
+				public void issueCheckBook() { }				 
+			}
+		
+		3. Polymorphism
+			ability of a business entity to have multiple forms
+
+			1. class extension
+
+			2. function overloading [ might be in same class/
+				or span across class hierarchy ]
+
+				a function defined many times with same name
+				but differentiated on following terms
+				i. number of arguments
+				ii. type of arguments
+				iii. sequence of type of arguments
+
+			3. function overriding [ across supe+sub classes ]
+				hiding the function of the base class
+				and proving the custom code that suits
+				the requirement of the child class
+				- function name + arguments are same
+				  as of the parent			
+			4. operator overloading
+				ability of an operator sign to overload
+				- you cannot redefine the operator code
+				- it is possible in C++
+				- Java doesnot have that feature 
+			
+		4. Inheritance
+			ability of a business entity to acquire
+			properties from existing business entities
+		
+			A <-- single level
+			|
+			B
+			|
+			C <-- multi level
+			|
+		------------------
+		|		|
+		D		E
+		|		|
+		-----------------
+			|
+			F <---multiple level [being D and E as parent to F]
+
+			hierarchical inheritance [ hybrid ]
+
+		Derivation		vs		Implementation
+		|					|
+		parent features			parent features are
+		are as it is 			MANDATED to the child
+		offered to the children		as a business RULE
+		|					|
+		child class may or 		it is mandatory for the
+		may not override		child to implement the
+		the parent functionalities	business RULES of the parent
+		|				|
+		regular class extension		with abstract classes and
+						interfaces
+
+	The Java Programming Language - James Gosling
+
+
+		- draw() any GeometricalShape <-- hint is Geometry scope
+
+		- abstract class = a class with partial contract
+
+
+		abstract class GeometricalShape <-- symmetry
+		{
+			void draw(); // undefined
+		}
+		class Circle extends GeometricalShape // concrete class
+		{
+			void draw() {
+				//circle is drawn..
+			}
+		}
+		class Triangle extends GeometricalShape
+		{
+			void draw() {
+				// triangle is drawn
+			}
+		}
+		class Square extends GeometricalShape
+		{
+			void draw() {
+				//square is drawn
+			}
+		}
+
+			MusicalInstrument <-- abstract
+			|
+	---------------------------------
+	|		|		|
+	StringBased	AirBased	DrumBased <-- abstract
+	Musical		Musical		Musical
+	Instrument	Instrument	Instrument
+	|		|		|
+	Guitar,Veena	Flute,Trumpet	Duff,Dhol <-- concrete
+	Violin,Cello	Whistle,Conch	Drums	
+
+
+	interface  = pure abstract class
+
+		one class can implement multiple interfaces
+
+		
+
+	interface = pure partial contract of a class
+
+
+		Light
+
+	SunLight	MoonLight
+	
+	CandleLight
+
+	TubeLight
+
+	BulbLight
+
+	On the earth, day and night
 
 
 
@@ -591,7 +837,192 @@ class Notes
 
 
 
+		5. Object communication
 
+
+
+
+
+
+
+
+
+interface Reactive
+{
+  void react();
+}
+interface Responsive extends Reactive
+{
+  void response();
+}
+
+interface Proactive extends Responsive
+{
+   void proact();
+}
+interface Eating
+{
+	void eat();
+}
+class Person implments Reactive,Eating
+{
+	public void react() { }
+	void talk() { }
+}
+class Student extends Person implements Responsive
+{
+	void study() { }
+}
+class Employee extends Student implements Proactive
+{
+	void study() { }
+}
+
+	1. exclusive method
+	2. inherited method
+	3. overridden method
+	4. implemented method
+
+
+		Object
+		| 11 methods
+		| Reactive	Eating
+		|  |react();	|eat();
+		|  | +----------+
+		|  | |
+		Person
+		|talk();
+	---------------
+	|  
+	|    
+	|  Responsive
+	|  |        |
+	Student     |
+	|study();   |
+	--------+  Proactive
+		|   |
+		Employee
+		  work();
+
+
+Exception handling
+--------------------
+		handle runtime errors = exception handling
+
+			error
+			|
+	--------------------------------------------
+	|	|	|	|		|
+	compile	linker	fatal logical 		runtime
+	|    	|	  |	    |		|
+	syntax	missing  JVM errors 4+4=16	exception
+
+
+	checked		vs		unchecked
+	|				|
+	checked by the			unchecked by the
+	compiler			compiler
+	
+	
+
+		libraries
+
+
+		Object
+		   |
+		Throwable
+		   |
+		---------------------------
+		|			|
+		Error		  Exception	
+		|			|checked
+				----------------------------------
+				|		|	    |
+			RuntimeException<=	IOException SQLException
+			| [unchecked]
+	-----------------------------------------
+	|		|			|
+ArithmeticException IndexOutOfBoundsException	NullPointerException	
+			|
+	-------------------------------
+	|			 |
+  ArrayIndexOutOfBoundsException StringIndexOutOfBoundsException				
+
+
+	try
+	catch
+	finally
+	throw - is used to throw the exception literally
+	throws - capability of a method to throw certain
+		 type of exceptions
+
+		checked		unchecked
+		|			|
+		Exception's	RuntimeException's
+		children	children
+
+	class Car
+	{
+		void drive() throws DocumentException
+		{
+			..
+			..
+			throw new BumperException();
+			..
+			.
+
+			throw new DocumentException();
+		}
+	}
+
+
+
+
+ 
+
+
+Packages
+-----------
+	Similar to the directories/folders
+	in the OS
+
+	to organize the relevant classes in folders
+
+			jungle
+			|
+	-------------------------------
+	|	|	|	|
+	cave	tree	river	farm
+	|	|	|	|
+	Lion	Parrot	Frog	FarmHouse
+	Beehieve Monkey	Fish	Hen
+	Bee		Crocodile Horse
+	Tiger
+	
+
+
+
+	1.       <---- default/friendly/same package
+	2. private <-- can be referred within the class body
+	3. protected <--
+		-can be referred via extends tunnel
+		by a child class within same package
+		or outside of the package
+
+		cave	WhiteTiger extends Tiger
+		farm    WhiteTiger extends Tiger
+		-can be referred to non-child [ Bear ]
+		 within the same package [ Tiger + Bear in cave]
+
+		BUT 
+		what if the WhiteTiger is moved/shifed to farm
+		and tries to refer the tiger's protected data
+		using reference to Tiger ????
+
+
+
+		
+	4. public <-- whole world can access
 
 
 
