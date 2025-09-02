@@ -1027,10 +1027,63 @@ Packages
 
 
 
+Generics and Collections
+------------------------
+
+		Components Orthogonal Space
+
+			x - type - int,float,Student,Song
+			| - Juice
+			| - Noodles
+			| - FriedRice
+			| - Pickle
+			| - Wine
+		-----------------	
+		|	|	|
+		y	i	z
+		|	|	|	
+	  container  iterator	algorithm
+	  |		|	 |
+	Glass	     Straw	print the pair
+				swapping it
+				drink();
+	Bowl	    ChopStiks	eat()
+	Plate		Spoon	eat();
+	Jar		Tong	lick();
+	Yglass			sipIt();
 
 
+   Collect[ion] framework
+			|
+			semi-developed application
 
 
+			Iterable
+			|3
+			Collection
+			|10
+		-----------------
+		|		|
+		List		Set
+		|5		|7
+		|duplicate	|unique
+	---------------	   --------------
+	|	      |	   |		|
+  ArrayList  LinkedList  TreeSet	HashSet
+     |		|	     |		    |
+  Logger     PhoneBook   PeriodicTable   BookShelf
+     |		|	     |		    |
+for storing	Contact  ChemicalElement   Book
+logs
+ PhoneLog
+		Comparable<---->Comparator
+
+
+			Map
+			|K,V
+		-----------------
+		|		|
+		TreeMap		HashMap
 
 
 
